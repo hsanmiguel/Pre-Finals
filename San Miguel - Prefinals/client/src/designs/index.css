@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  line-height: 1.6;
+}
+
+.blog-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.blog-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.blog-header nav {
+  margin-top: 15px;
+}
+
+.blog-header nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #3b82f6;
+  transition: all 0.25s ease;
+}
+
+.blog-header nav a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.featured-post {
+  background-color: #e0f2fe;
+  padding: 24px;
+  border-left: 6px solid #0284c7;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.featured-post:hover {
+  background-color: #bae6fd;
+}
+
+.posts-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .posts-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.post-card {
+  background-color: #fefefe;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.post-card h2 {
+  margin-top: 0;
+  color: #111827;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.blog-footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 16px;
+  margin: 6px 4px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
