@@ -1,0 +1,112 @@
+/* Container */
+.about-page {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  min-height: 100vh;
+  padding: 0 24px;
+}
+
+/* Header - consistent with index.css */
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 60px 0;
+}
+
+.blog-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #3b82f6;
+}
+
+.blog-header nav {
+  display: flex;
+  gap: 16px;
+}
+
+.blog-header nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #1f2937;
+  transition: color 0.25s ease;
+}
+
+.blog-header nav a:hover {
+  color: #2563eb;
+}
+
+/* Welcome message */
+.welcome-msg {
+  margin: 24px auto;
+  background-color: #eef2ff;
+  border-radius: 8px;
+  padding: 10px 16px;
+  max-width: fit-content;
+  text-align: center;
+  font-size: 1rem;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+/* About content */
+.about-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  line-height: 1.7;
+}
+
+.about-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.about-container h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 28px;
+  color: #1f2937;
+}
+
+.about-container p {
+  font-size: 1rem;
+  margin-top: 12px;
+  color: #374151;
+}
+
+.about-container a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.about-container a:hover {
+  color: #2563eb;
+}
+
+/* Footer */
+.blog-footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .about-container {
+    padding: 24px;
+  }
+}

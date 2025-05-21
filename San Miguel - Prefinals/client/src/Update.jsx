@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import "./designs/create.css";
 import { useParams, useNavigate } from "react-router-dom";
+import "./designs/create.css"; // Uses existing styles
 
 function Update() {
-  const { id } = useParams(); // Get the blog ID from the URL
+  const { id } = useParams();
   const navigate = useNavigate();
   const [blog, setBlog] = useState({ title: "", snippet: "", body: "" });
 
-  // Fetch the existing blog data
   useEffect(() => {
     const fetchBlog = async () => {
       try {
         const res = await fetch(`http://localhost:5000/blogs/${id}`);
         const data = await res.json();
         if (res.ok) {
-          setBlog(data); // Set the blog data to pre-fill the form
+          setBlog(data);
         } else {
           alert("Failed to fetch blog: " + data.error);
         }
@@ -28,20 +27,17 @@ function Update() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const res = await fetch(`http://localhost:5000/blogs/${id}`, {
-        method: "PUT", // Use PUT for updating
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(blog), // Send the updated blog data
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(blog),
       });
 
       const data = await res.json();
       if (res.ok) {
         alert("Blog updated successfully!");
-        navigate("/"); // Redirect to the homepage
+        navigate("/");
       } else {
         alert("Failed to update blog: " + data.error);
       }
@@ -52,45 +48,42 @@ function Update() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setBlog({ ...blog, [name]: value }); // Update the blog state as the user types
+    setBlog({ ...blog, [name]: value });
   };
 
   return (
-    <React.Fragment>
-      <div className="blog-container">
-        <header className="blog-header">
-          <h1>San Miguel Blog</h1>
-          <nav>
-            <ul>
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/create">Create Blog</a>
-            </ul>
-          </nav>
-        </header>
-      </div>
+    <div className="create-page">
+      <header className="blog-header">
+        <h1>San Miguel Blog</h1>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/create">Create Blog</a>
+        </nav>
+      </header>
 
-      <div className="create-blog-content">
+      <div className="create-blog-form">
+        <h2>Update Blog</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="title">Blog title:</label>
+          <label htmlFor="title">Title</label>
           <input
-            type="text"
             id="title"
             name="title"
             value={blog.title}
             onChange={handleChange}
             required
           />
-          <label htmlFor="snippet">Blog snippet:</label>
+
+          <label htmlFor="snippet">Snippet</label>
           <input
-            type="text"
             id="snippet"
             name="snippet"
             value={blog.snippet}
             onChange={handleChange}
             required
           />
-          <label htmlFor="body">Blog body:</label>
+
+          <label htmlFor="body">Body</label>
           <textarea
             id="body"
             name="body"
@@ -98,10 +91,17 @@ function Update() {
             onChange={handleChange}
             required
           ></textarea>
-          <button type="submit">Update</button>
+
+          <button type="submit" className="btn btn-primary">
+            Update Blog
+          </button>
         </form>
       </div>
-    </React.Fragment>
+
+      <footer className="blog-footer">
+        <p>© 2025 San Miguel Blog. All rights reserved.</p>
+      </footer>
+    </div>
   );
 }
 

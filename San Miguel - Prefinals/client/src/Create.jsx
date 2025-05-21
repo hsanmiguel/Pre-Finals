@@ -1,32 +1,33 @@
 import React from "react";
 import "./designs/create.css";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 function Create() {
-    const navigate = useNavigate();
-    const handleSubmit = async (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const blog = {
       title: e.target.title.value,
       snippet: e.target.snippet.value,
-      body: e.target.body.value
+      body: e.target.body.value,
     };
 
     try {
-      const res = await fetch('http://localhost:5000/blogs', {
-        method: 'POST',
+      const res = await fetch("http://localhost:5000/blogs", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(blog)
+        body: JSON.stringify(blog),
       });
 
       const data = await res.json();
       if (res.ok) {
         alert("Blog created successfully!");
-        e.target.reset(); // clear the form
-        navigate("/")
+        e.target.reset();
+        navigate("/");
       } else {
         alert("Failed to create blog: " + data.error);
       }
@@ -36,32 +37,40 @@ function Create() {
   };
 
   return (
-    <React.Fragment>
-      <div className="blog-container">
-        <header className="blog-header">
-          <h1>San Miguel Blog</h1>
-          <nav>
-            <ul>
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/create">Create Blog</a>
-            </ul>
-          </nav>
-        </header>
+    <div className="create-page">
+      <header className="blog-header">
+        <h1>San Miguel Blog</h1>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/create">Create Blog</a>
+        </nav>
+      </header>
+
+      <div className="welcome-msg">
+        Welcome, <strong>hanssanmiguel</strong>!
       </div>
 
-      <div className="create-blog-content">
+      <div className="create-blog-form">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="title">Blog title:</label>
+          <h2>Create a New Blog</h2>
+          <label htmlFor="title">Title</label>
           <input type="text" id="title" name="title" required />
-          <label htmlFor="snippet">Blog snippet:</label>
+
+          <label htmlFor="snippet">Snippet</label>
           <input type="text" id="snippet" name="snippet" required />
-          <label htmlFor="body">Blog body:</label>
-          <textarea id="body" name="body" required></textarea>
-          <button type="submit">Submit</button>
+
+          <label htmlFor="body">Body</label>
+          <textarea id="body" name="body" required rows={8}></textarea>
+
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
-    </React.Fragment>
+
+      <footer className="blog-footer">
+        <p>© 2025 San Miguel Blog. All rights reserved.</p>
+      </footer>
+    </div>
   );
 }
 
