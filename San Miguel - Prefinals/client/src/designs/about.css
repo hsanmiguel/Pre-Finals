@@ -1,13 +1,13 @@
 /* Container */
 .about-page {
   font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
+  background-color: #1a1a1a;
+  color: #e5e7eb;
   min-height: 100vh;
   padding: 0 24px;
 }
 
-/* Header - consistent with index.css */
+/* Header */
 .blog-header {
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@
 .blog-header h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #3b82f6;
+  color: #60a5fa;
 }
 
 .blog-header nav {
@@ -29,24 +29,24 @@
 .blog-header nav a {
   text-decoration: none;
   font-weight: 500;
-  color: #1f2937;
+  color: #e5e7eb;
   transition: color 0.25s ease;
 }
 
 .blog-header nav a:hover {
-  color: #2563eb;
+  color: #60a5fa;
 }
 
 /* Welcome message */
 .welcome-msg {
   margin: 24px auto;
-  background-color: #eef2ff;
+  background-color: #1e293b;
   border-radius: 8px;
   padding: 10px 16px;
   max-width: fit-content;
   text-align: center;
   font-size: 1rem;
-  color: #4f46e5;
+  color: #60a5fa;
   font-weight: 500;
 }
 
@@ -55,16 +55,16 @@
   max-width: 800px;
   margin: 40px auto;
   padding: 32px;
-  background-color: #ffffff;
+  background-color: #111827;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   line-height: 1.7;
 }
 
 .about-container h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #111827;
+  color: #f3f4f6;
   margin-bottom: 16px;
 }
 
@@ -72,22 +72,22 @@
   font-size: 1.4rem;
   font-weight: 600;
   margin-top: 28px;
-  color: #1f2937;
+  color: #e5e7eb;
 }
 
 .about-container p {
   font-size: 1rem;
   margin-top: 12px;
-  color: #374151;
+  color: #d1d5db;
 }
 
 .about-container a {
-  color: #3b82f6;
+  color: #60a5fa;
   text-decoration: underline;
 }
 
 .about-container a:hover {
-  color: #2563eb;
+  color: #93c5fd;
 }
 
 /* Footer */
@@ -95,7 +95,7 @@
   text-align: center;
   margin-top: 60px;
   font-size: 0.85rem;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 /* Responsive */

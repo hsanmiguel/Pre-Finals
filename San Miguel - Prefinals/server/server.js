@@ -1,6 +1,6 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const PORT = 5000;
@@ -72,6 +72,9 @@ app.delete('/blogs/:id', async (req, res) => {
         res.status(500).json({ error: "Failed to delete blog" });
     }
 });
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+module.exports = app;

@@ -1,7 +1,7 @@
 .delete-page {
   font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
+  background-color: #1a1a1a;
+  color: #e5e7eb;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 .blog-header h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #3b82f6;
+  color: #60a5fa;
 }
 
 .blog-header nav {
@@ -29,12 +29,12 @@
 .blog-header nav a {
   text-decoration: none;
   font-weight: 500;
-  color: #1f2937;
+  color: #e5e7eb;
   transition: color 0.25s ease;
 }
 
 .blog-header nav a:hover {
-  color: #2563eb;
+  color: #60a5fa;
 }
 
 /* Delete confirmation box */
@@ -42,9 +42,9 @@
   max-width: 600px;
   margin: 60px auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: #111827;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
@@ -52,13 +52,13 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #dc2626;
+  color: #ef4444;
 }
 
 .delete-confirm-box p {
   font-size: 1.05rem;
   margin-bottom: 24px;
-  color: #374151;
+  color: #d1d5db;
 }
 
 /* Buttons */
@@ -87,7 +87,7 @@
   text-align: center;
   padding: 40px 0 20px;
   font-size: 0.85rem;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 /* Responsive */
